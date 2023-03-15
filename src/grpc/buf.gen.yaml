@@ -1,23 +1,7 @@
 version: v1
 plugins:
-#  - name: js
-#    out: ../
-#    opt: import_style=commonjs,binary
-#  - name: grpc
-#    out: ../
-#    opt: grpc_js
-#    path: protoc-gen-grpc-web
   - plugin: grpc-web
     out: generated
     opt:
-#      - path=source_relative
-#      - service=grpc-web
       - import_style=commonjs+dts
       - mode=grpcwebtext
-#      - grpc_js
-#  - plugin: protoc-gen-grpc-web
-#    out: ../
-#    opt:
-#      - import_style=commonjs+dts
-#      - path=source_relative
-#    strategy: all

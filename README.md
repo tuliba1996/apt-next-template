@@ -13,6 +13,14 @@
 
 ## Getting Started
 
+### Create project
+
+```bash
+npx create-next-app --example https://github.com/tuliba1996/apt-next-template <project-name>
+```
+
+## Ecosystem
+
 ### Code Generator Plugin:
 You can download the `protoc-gen-grpc-web` protoc plugin from our
 [release](https://github.com/grpc/grpc-web/releases) page:
@@ -38,7 +46,7 @@ Typically, you will run the following command to generate the proto messages
 and the service client stub from your `.proto` definitions:
 
 ```sh
-$ protoc -I=$DIR echo.grpc \
+$ protoc -I=$DIR test.proto \
     --js_out=import_style=commonjs:$OUT_DIR \
     --grpc-web_out=import_style=commonjs,mode=grpcwebtext:$OUT_DIR
 ```
@@ -75,9 +83,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 ## Learn More
 
