@@ -1,8 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# APT TEMPLATE CODE NEXTJS
+
+## Description
+ - Next 13
+ - Typescript
+ - Auth0
+ - React Query
+ - React Hook Form
+ - Yup
+ - GRPC web
+ - buf
+
 
 ## Getting Started
 
-First, run the development server:
+### Code Generator Plugin:
+You can download the `protoc-gen-grpc-web` protoc plugin from our
+[release](https://github.com/grpc/grpc-web/releases) page:
+
+If you don't already have `protoc` installed, you will have to download it
+first from [here](https://github.com/protocolbuffers/protobuf-javascript/releases).
+
+> **NOTE:** Javascript output is no longer supported by `protocolbuffers/protobuf` package as it previously did. Please use the releases from [protocolbuffers/protobuf-javascript](https://github.com/protocolbuffers/protobuf-javascript/releases) instead.
+
+Make sure they are both executable and are discoverable from your PATH.
+
+For example, in MacOS, you can do:
+
+```
+$ sudo mv ~/Downloads/protoc-gen-grpc-web-1.4.2-darwin-x86_64 \
+    /usr/local/bin/protoc-gen-grpc-web
+$ chmod +x /usr/local/bin/protoc-gen-grpc-web
+```
+
+### Client Configuration Options
+
+Typically, you will run the following command to generate the proto messages
+and the service client stub from your `.proto` definitions:
+
+```sh
+$ protoc -I=$DIR echo.grpc \
+    --js_out=import_style=commonjs:$OUT_DIR \
+    --grpc-web_out=import_style=commonjs,mode=grpcwebtext:$OUT_DIR
+```
+
+You can then use Browserify, Webpack, Closure Compiler, etc. to resolve imports
+at compile time.
+
+#### Generated Code with buf
+
+Install buf
+
+```bash
+# install buf
+brew install bufbuild/buf/buf
+
+# check version buf
+buf version
+```
+
+```bash
+cd src/grpc
+buf generate
+```
+
+Run the development server:
 
 ```bash
 npm run dev
