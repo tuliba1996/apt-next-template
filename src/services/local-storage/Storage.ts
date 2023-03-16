@@ -1,4 +1,4 @@
-import { LS_NAMESPACE } from '../../constans/config'
+import {LS_NAMESPACE} from "../../constans/config"
 import { Errors, logError } from '../exceptions'
 
 type BrowserStorage = typeof localStorage | typeof sessionStorage
